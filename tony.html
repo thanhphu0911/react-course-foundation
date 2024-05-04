@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Cacl</title>
+</head>
+<body>
+
+  <div class="panel">
+    We have built partnerships with small farms around the world to
+    hand-select beans at the peak of season. We then carefully roast
+    in  to maximize their
+    potential.
+  </div>
+
+  <div id="test"></div>
+
+  <style>
+    :root {
+      font-size: calc(0.5em + 1vw);
+    }
+
+    .panel {
+      padding: 1em;
+      border-radius: 0.5em;
+      border: 1px solid #999;
+      background-color: #f00;
+      width: 90vmin;
+      height: 90vmin;
+    }
+
+
+  </style>
+
+  <script type="text/javascript">
+    const test = document.getElementById('test');
+
+    const divEle = document.createElement('div');
+    divEle.setAttribute('class', 'tony');
+    divEle.innerHTML = 'tet react virtual dom';
+
+    test.appendChild(divEle);
+  </script>
+
+</body>
+</html>
+
