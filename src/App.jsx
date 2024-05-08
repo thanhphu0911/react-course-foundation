@@ -11,6 +11,7 @@ import Component from "./Component";
 import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
 import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
+import SampleAppHeader from "./SampleAppHeader";
 
 function App() {
   // JSX
@@ -33,8 +34,9 @@ function App() {
       <HandleEvent />
 
       <br />
+      <SampleAppHeader devName="phusnyd" />
       <PhuComposedComponent />
-
+      <PhuComposedComponent />
       <br />
       <br />
       <br />
