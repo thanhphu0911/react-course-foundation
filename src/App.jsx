@@ -12,6 +12,7 @@ import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
 import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
+import ConditionalRendering from "./ConditionalRendering";
 
 function App() {
   // JSX
@@ -38,6 +39,9 @@ function App() {
       <PhuComposedComponent />
       <PhuComposedComponent />
       <br />
+
+      <ConditionalRendering />
+
       <br />
       <br />
       <br />
