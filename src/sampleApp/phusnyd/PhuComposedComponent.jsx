@@ -1,13 +1,23 @@
+import BasicButton from '../../components/BasicButton';
+
 function PhuComposedComponent() {
   return (
     <>
       <div className="container">
-        <nav className="banner">
+        <div className="banner">
           <h1>No Items!</h1>
-        </nav>
-        <main>
-          <button className="btn">Increment</button>
-        </main>
+        </div>
+        <div style={{
+          textAlign: 'right'
+        }}>
+          <BasicButton 
+            text="Create"
+            className="btn nhat_button" 
+            onClick={() => {}}
+            type="button"
+          />
+        </div>
+
       </div>
     </>
   );
