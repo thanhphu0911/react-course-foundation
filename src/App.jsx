@@ -13,6 +13,7 @@ import HandleEvent from "./HandleEvent";
 import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
+import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
 
 function App() {
   // JSX
@@ -38,6 +39,7 @@ function App() {
       <SampleAppHeader devName="phusnyd" />
       <PhuComposedComponent />
       <PhuComposedComponent />
+      <DuyComposedComponent />
       <br />
 
       <ConditionalRendering />
