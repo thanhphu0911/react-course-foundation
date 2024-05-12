@@ -71,4 +71,10 @@ $ git checkout -b {name branch}
 # add file
 $ git add .
 
+# commit
+$ git commit -m "..."
+
+# push code
+$ git push
+
 ```
