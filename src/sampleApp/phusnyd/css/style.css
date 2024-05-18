@@ -44,3 +44,7 @@ main {
   background-color: #737f88;
   cursor: pointer;
 }
+
+.signInBtn {
+  padding: 20px 40px;
+}
