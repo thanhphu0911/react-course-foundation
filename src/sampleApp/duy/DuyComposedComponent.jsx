@@ -1,11 +1,9 @@
-import BasicButton from "../../components/BasicButton";
 import React from "react";
 import GuestGreeting from "./GuestGreeting";
 import UserGreeting from "./UserGreeting";
 
-function DuyComposedComponent() {
+function DuyComposedComponent() { 
   const [login, setLogin] = React.useState(false);
-
   function handleLogin() {
     setLogin(!login);
   }
