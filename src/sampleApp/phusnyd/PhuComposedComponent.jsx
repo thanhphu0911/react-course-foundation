@@ -5,7 +5,7 @@ function PhuComposedComponent() {
     <>
       <div className="container">
         <div className="banner">
-          <h1>No Items!</h1>
+          <h1 className='heading'>No Items!</h1>
         </div>
         <div style={{
           textAlign: 'right'

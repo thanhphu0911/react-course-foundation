@@ -37,7 +37,7 @@ body {
   justify-content: center;
 }
 
-.btn-duy {
+.btnPhu-duy {
   margin: 0.8rem;
   background: #fff;
   padding: 0.7rem 1rem;
@@ -47,7 +47,7 @@ body {
   color: #b7c1c9;
 }
 
-.btn-duy:hover {
+.btnPhu-duy:hover {
   color: #fff;
   background-color: #737f88;
   cursor: pointer;
