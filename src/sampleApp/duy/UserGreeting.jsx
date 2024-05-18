@@ -4,7 +4,7 @@ function UserGreeting({ text, name, handleLogin }) {
   return (
     <>
       <div className="card">
-        <div className="card-header">
+        <div class="banner">
           <h2 className="card-header-title">
             {text} {name}
           </h2>
@@ -18,15 +18,7 @@ function UserGreeting({ text, name, handleLogin }) {
           />
         </div>
       </div>
-      {/* <h2>
-        {text} {name}
-      </h2>
-      <BasicButton
-        text="Logout"
-        className="btn"
-        onClick={handleLogin}
-        type="button"
-      ></BasicButton> */}
+     
     </>
   );
 }

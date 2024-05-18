@@ -13,6 +13,9 @@ function DuyComposedComponent() {
   return (
     <>
       <div>
+
+        <div />
+        <br />
         {/* <h1>Sample App: Duy - Compose Component </h1>
         <div className="card">
           <div className="card-header">
@@ -34,12 +37,12 @@ function DuyComposedComponent() {
             text="Welcome to"
             name="Duy"
             handleLogin={handleLogin}
-          ></UserGreeting>
+          />
         ) : (
           <GuestGreeting
             text="Please sign up"
             handleLogin={handleLogin}
-          ></GuestGreeting>
+          />
         )}
       </div>
     </>

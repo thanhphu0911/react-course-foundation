@@ -14,15 +14,10 @@ import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
 import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
-import GuestGreeting from "./GuestGreetingApp/phusnyd/GuestGreeting";
-import UserGreeting from "./GuestGreetingApp/phusnyd/UserGreeting";
+import GuestGreeting from "./sampleApp/phusnyd/GuestGretting/GuestGreeting"
 
 function App() {
-  const [logIn, setLogIn] = useState(false);
-
-  function handleLogIn() {
-    setLogIn(!logIn);
-  }
+ 
   // JSX
   return (
     <>
@@ -52,11 +47,8 @@ function App() {
       <ConditionalRendering />
 
       <br />
-      {logIn ? (
-        <UserGreeting text="Welcome to" name="Phu" handleLogIn={handleLogIn} />
-      ) : (
-        <GuestGreeting text="Please sign in" handleLogIn={handleLogIn} />
-      )}
+      <GuestGreeting />
+
       <br />
       <br />
       <br />
