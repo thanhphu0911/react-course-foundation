@@ -31,7 +31,13 @@ body {
   font-weight: bolder;
 }
 
-.btn {
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-duy {
   margin: 0.8rem;
   background: #fff;
   padding: 0.7rem 1rem;
@@ -41,7 +47,7 @@ body {
   color: #b7c1c9;
 }
 
-.btn:hover {
+.btn-duy:hover {
   color: #fff;
   background-color: #737f88;
   cursor: pointer;

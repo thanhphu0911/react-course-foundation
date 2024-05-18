@@ -1,5 +1,5 @@
-import React from 'react'
-import BasicButton from './components/BasicButton';
+import React from "react";
+import BasicButton from "./components/BasicButton";
 
 /*
  &&: trái, phải
@@ -20,35 +20,28 @@ import BasicButton from './components/BasicButton';
 */
 
 function LoginButton() {
-  return (
-    <div>Login button</div>
-  )
+  return <div>Login button</div>;
 }
 
 function LogoutButton() {
-  return (
-    <div>Logout button</div>
-  )
+  return <div>Logout button</div>;
 }
-
 
 function ConditionalRendering() {
   const [users, setUsers] = React.useState(null);
-  let button = <LoginButton />
+  let button = <LoginButton />;
 
-  if(users && users.length > 0) {
-    button = <LogoutButton />
+  if (users && users.length > 0) {
+    button = <LogoutButton />;
   }
 
-  console.log('users: ', users)
+  console.log("users: ", users);
   function testUser() {
-    setUsers(['tony'])
+    setUsers(["tony"]);
   }
 
   function renderText() {
-    return (
-      <div>test function conditional</div>
-    )
+    return <div>test function conditional</div>;
   }
 
   return (
@@ -58,11 +51,10 @@ function ConditionalRendering() {
       <h4> && </h4>
       <BasicButton text="Test User" onClick={testUser} />
       <br />
-      {Array.isArray(users) && users.map(user => {
-        return (
-          <div>user</div>
-        )
-      })}
+      {Array.isArray(users) &&
+        users.map((user) => {
+          return <div>user</div>;
+        })}
 
       <br />
 
@@ -80,12 +72,11 @@ function ConditionalRendering() {
       <br />
       <h4>Function variable</h4>
       {Array.isArray(users) && renderText()}
-      
     </div>
-  )
+  );
 }
 
-export default ConditionalRendering
+export default ConditionalRendering;
 
 /*
  chain ternary operator
