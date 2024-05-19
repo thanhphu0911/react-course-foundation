@@ -14,7 +14,10 @@ import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
 import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
-
+import NhatComposedComponent from "./sampleApp/nhat/NhatComposedComponent";
+import NhatGuestGreeting from "./sampleApp/nhat/NhatGuestGreeting";
+import NhatUserGreeting from "./sampleApp/nhat/NhatUserGreeting";
+import HanndleApp from "./sampleApp/nhat/HandleApp";
 function App() {
   // JSX
   return (
@@ -41,10 +44,15 @@ function App() {
       <PhuComposedComponent />
       <DuyComposedComponent />
       <br />
-
-      <ConditionalRendering />
-
+      <SampleAppHeader devName="nhat" />
+      <NhatComposedComponent />
+      <NhatComposedComponent />
       <br />
+      <ConditionalRendering />
+      <br />
+      <SampleAppHeader devName="nhat-week 2" />
+      <HanndleApp/>
+
       <br />
       <br />
       <br />
