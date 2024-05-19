@@ -15,6 +15,8 @@ import ConditionalRendering from "./ConditionalRendering";
 import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
 import GuestGreeting from "./sampleApp/phusnyd/GuestGretting/GuestGreeting"
 import ListKey from "./List-Key";
+import Form from "./Form";
+import TonyFormPersonal from './sampleApp/tony/TonyFormPersonal';
 
 function App() {
  
@@ -51,6 +53,12 @@ function App() {
       <br />
       <br />
       <ListKey />
+
+      <br />
+      <Form />
+
+      <br />
+      <TonyFormPersonal />
 
       <br />
       <br />
