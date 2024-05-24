@@ -8,16 +8,13 @@ import ReactJSX from "./ReactJSX";
 import Props from "./Props";
 import State from "./State";
 import Component from "./Component";
-import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
-import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
-import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
 import NhatComposedComponent from "./sampleApp/nhat/NhatComposedComponent";
-import NhatGuestGreeting from "./sampleApp/nhat/NhatGuestGreeting";
-import NhatUserGreeting from "./sampleApp/nhat/NhatUserGreeting";
-import HanndleApp from "./sampleApp/nhat/HandleApp";
+import HandleApp from "./sampleApp/nhat/HandleApp";
+import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
+import BoxGenerator from "./sampleApp/nhat/BoxGenerator";
 function App() {
   // JSX
   return (
@@ -33,16 +30,11 @@ function App() {
       <Component />
 
       <br />
-      <TonyComposeComponent />
-
       <br />
       <HandleEvent />
 
       <br />
-      <SampleAppHeader devName="phusnyd" />
-      <PhuComposedComponent />
-      <PhuComposedComponent />
-      <DuyComposedComponent />
+      
       <br />
       <SampleAppHeader devName="nhat" />
       <NhatComposedComponent />
@@ -51,10 +43,12 @@ function App() {
       <ConditionalRendering />
       <br />
       <SampleAppHeader devName="nhat-week 2" />
-      <HanndleApp/>
+      <HandleApp/>
 
       <br />
+      <HandleGenerateBox/>
       <br />
+      <BoxGenerator/>
       <br />
       <br />
       <br />
