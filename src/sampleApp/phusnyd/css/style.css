@@ -51,5 +51,23 @@ main {
 
 .heading {
   font-size: 40px;
-  color: #737f88
+  color: #737f88;
+}
+
+/* GENERATE BOX CSS */
+
+.box {
+  width: 30px;
+  padding: 30px;
+  background-color: gray;
+  list-style: none;
+  text-align: center;
+}
+.box:hover {
+  cursor: pointer;
+}
+.boxList {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
