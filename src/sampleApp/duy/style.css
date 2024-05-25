@@ -1,0 +1,54 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #f1f1f1;
+  max-width: 30%;
+  margin: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  background: #ffc100;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+}
+.card-header-title {
+  margin: 0;
+  font-weight: bolder;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPhu-duy {
+  margin: 0.8rem;
+  background: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #b7c1c9;
+}
+
+.btnPhu-duy:hover {
+  color: #fff;
+  background-color: #737f88;
+  cursor: pointer;
+}

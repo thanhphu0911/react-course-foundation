@@ -3,7 +3,6 @@ function component react
 react function component
 component react
 */
-
 import ReactJSX from "./ReactJSX";
 import Props from "./Props";
 import State from "./State";
@@ -12,6 +11,13 @@ import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
 import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
+import ConditionalRendering from "./ConditionalRendering";
+import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
+import GuestGreeting from "./sampleApp/phusnyd/GuestGretting/GuestGreeting";
+import ListKey from "./List-Key";
+import Form from "./Form";
+import TonyFormPersonal from "./sampleApp/tony/TonyFormPersonal";
+import TodoApp from "./sampleApp/phusnyd/TodoList/TodoApp";
 
 function App() {
   // JSX
@@ -37,10 +43,27 @@ function App() {
       <SampleAppHeader devName="phusnyd" />
       <PhuComposedComponent />
       <PhuComposedComponent />
+      <DuyComposedComponent />
+      <br />
+
+      <ConditionalRendering />
       <br />
       <br />
+      <GuestGreeting />
       <br />
       <br />
+      <ListKey />
+
+      <br />
+      <Form />
+
+      <br />
+      <TonyFormPersonal />
+
+      <br />
+      <br />
+
+      <TodoApp />
       <br />
       <br />
       <br />

@@ -30,7 +30,7 @@ main {
   display: flex;
   align-items: center;
 }
-.btn {
+.btnPhu {
   margin-left: 16px;
   background-color: #fff;
   border: solid 0.5px #97a5b1;
@@ -39,8 +39,17 @@ main {
   font-size: 18px;
   border-radius: 8px;
 }
-.btn:hover {
+.btnPhu:hover {
   color: #fff;
   background-color: #737f88;
   cursor: pointer;
+}
+
+.signInBtn {
+  padding: 20px 40px;
+}
+
+.heading {
+  font-size: 40px;
+  color: #737f88
 }
