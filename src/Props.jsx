@@ -1,5 +1,4 @@
 import React from 'react'
-
 /* Props
 - pass parenet component to child component
 - pair key: value

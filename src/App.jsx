@@ -10,10 +10,9 @@ import State from "./State";
 import Component from "./Component";
 import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
-import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
-import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
+import LiftingStateUp from "./sampleApp/nhat/LiftingStateUp";
 
 function App() {
   // JSX
@@ -36,10 +35,8 @@ function App() {
       <HandleEvent />
 
       <br />
-      <SampleAppHeader devName="phusnyd" />
-      <PhuComposedComponent />
-      <PhuComposedComponent />
-      <DuyComposedComponent />
+      <SampleAppHeader devName="nhat" />
+      <LiftingStateUp/>
       <br />
 
       <ConditionalRendering />
