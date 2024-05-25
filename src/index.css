@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 html {
   padding: 12px;
 }

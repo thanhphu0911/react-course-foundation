@@ -4,7 +4,7 @@ function UserGreeting({ text, name, handleLogin }) {
   return (
     <>
       <div className="card">
-        <div class="banner">
+        <div className="banner">
           <h2 className="card-header-title">
             {text} {name}
           </h2>

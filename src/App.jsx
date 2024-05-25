@@ -19,6 +19,8 @@ import BoxGenerateApp from "./sampleApp/phusnyd/GenerateBox/BoxGenerateApp";
 import NhatComposedComponent from "./sampleApp/nhat/NhatComposedComponent";
 import HandleApp from "./sampleApp/nhat/HandleApp";
 import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
+import StateHook from "./StateHook";
+import EffectHook from "./EffectHook";
 
 function App() {
   // JSX
@@ -58,6 +60,11 @@ function App() {
       <br />
       <HandleGenerateBox/>
       <br />
+
+      <StateHook />
+
+      <br />
+      <EffectHook />
       
       <br />
       <br />
