@@ -4,7 +4,7 @@ export default function NhatGenerateBox ({ numBoxes, setNumBoxes, onHandleSubmit
     return (
         <>
         <form onSubmit={onHandleSubmit}>
-            <p>Number of boxes to generate.</p>
+            <h2>Number of boxes to generate.</h2>
             <input type="number"
                     min="1"
                     max="128"

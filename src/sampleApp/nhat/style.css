@@ -75,9 +75,11 @@ body {
     justify-content: center;
 }
 .divBox {
-    background-color: green;
+    width: 10%;
     padding: 20px;
     margin: 10px;
     text-align: center;
     color: "black";
+    float: left;
+    list-style: none;
 }

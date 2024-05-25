@@ -6,27 +6,31 @@ import "./style.css";
 export default function HandleGenerateBox(){
     const [numBoxes, setNumBoxes] = useState(0);
     const [boxes, setBoxes] = useState(['']);
+    const [changeColor, setChangeColor] = useState("#cccccc");
+
+    function handleChangeColor() {
+    const randomColor = "#" + Math.random().toString(16).slice(2, 8);
+    setChangeColor((changeColor) => (changeColor = randomColor));
+    console.log("color: " + changeColor);
+    }
+    
     function handleSubmit(e) {
         e.preventDefault();
         if (!numBoxes || numBoxes === 0) return;
         console.log("boxes",boxes);
-        //setBoxes(prevState => e.target.value);
         const newBoxes = [];
         for (var i =1; i <= numBoxes; i++){
             newBoxes.push(
-                <div className="divBox"
+                <ul>
+                    <li className="divBox"
                     key={i}
-                    style={{
-                        // eslint-disable-next-line no-undef
-                        backgroundColor: "green",
-                        padding: 20,
-                        margin: 10,
-                        textAlign: "center",
-                        textColor: "black",
-                    }} 
+                    style={{backgroundColor: `${changeColor}`}}
+                    onClick={handleChangeColor}
                     >
                         Box #{i}
-                    </div>
+                    </li>
+                </ul>
+                
 
             );
             setBoxes(newBoxes);

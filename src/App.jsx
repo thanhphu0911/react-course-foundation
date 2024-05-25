@@ -14,7 +14,6 @@ import ConditionalRendering from "./ConditionalRendering";
 import NhatComposedComponent from "./sampleApp/nhat/NhatComposedComponent";
 import HandleApp from "./sampleApp/nhat/HandleApp";
 import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
-import BoxGenerator from "./sampleApp/nhat/BoxGenerator";
 function App() {
   // JSX
   return (
@@ -48,7 +47,6 @@ function App() {
       <br />
       <HandleGenerateBox/>
       <br />
-      <BoxGenerator/>
       <br />
       <br />
       <br />
