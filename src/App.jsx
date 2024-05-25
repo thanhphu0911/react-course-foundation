@@ -21,31 +21,16 @@ function App() {
       <ReactJSX />
       <br />
       <Props />
-
-      <br />
-      <State />
-
-      <br />
-      <Component />
-
-      <br />
-      <br />
-      <HandleEvent />
-
-      <br />
-      
       <br />
       <SampleAppHeader devName="nhat" />
-      <NhatComposedComponent />
-      <NhatComposedComponent />
-      <br />
-      <ConditionalRendering />
-      <br />
-      <SampleAppHeader devName="nhat-week 2" />
-      <HandleApp/>
-
-      <br />
       <HandleGenerateBox/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
       <br />
       <br />
       <br />
