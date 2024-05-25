@@ -7,9 +7,7 @@ import ReactJSX from "./ReactJSX";
 import Props from "./Props";
 import State from "./State";
 import Component from "./Component";
-import TonyComposeComponent from "./sampleApp/tony/TonyComposeComponent";
 import HandleEvent from "./HandleEvent";
-import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
 import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
@@ -18,6 +16,9 @@ import ListKey from "./List-Key";
 import Form from "./Form";
 import TonyFormPersonal from "./sampleApp/tony/TonyFormPersonal";
 import BoxGenerateApp from "./sampleApp/phusnyd/GenerateBox/BoxGenerateApp";
+import NhatComposedComponent from "./sampleApp/nhat/NhatComposedComponent";
+import HandleApp from "./sampleApp/nhat/HandleApp";
+import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
 
 function App() {
   // JSX
@@ -26,24 +27,11 @@ function App() {
       <ReactJSX />
       <br />
       <Props />
-
       <br />
-      <State />
-
+      <SampleAppHeader devName="nhat" />
+      
       <br />
-      <Component />
-
       <br />
-      <TonyComposeComponent />
-
-      <br />
-      <HandleEvent />
-
-      <br />
-      <SampleAppHeader devName="phusnyd" />
-      <PhuComposedComponent />
-      <PhuComposedComponent />
-      <DuyComposedComponent />
       <br />
 
       <ConditionalRendering />
@@ -64,7 +52,13 @@ function App() {
 
       <BoxGenerateApp />
       <br />
+
       <br />
+      <NhatComposedComponent />
+      <br />
+      <HandleGenerateBox/>
+      <br />
+      
       <br />
       <br />
     </>
