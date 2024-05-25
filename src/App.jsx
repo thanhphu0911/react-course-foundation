@@ -13,13 +13,13 @@ import PhuComposedComponent from "./sampleApp/phusnyd/PhuComposedComponent";
 import SampleAppHeader from "./SampleAppHeader";
 import ConditionalRendering from "./ConditionalRendering";
 import DuyComposedComponent from "./sampleApp/duy/DuyComposedComponent";
-import GuestGreeting from "./sampleApp/phusnyd/GuestGretting/GuestGreeting"
+import GuestGreeting from "./sampleApp/phusnyd/GuestGretting/GuestGreeting";
 import ListKey from "./List-Key";
 import Form from "./Form";
-import TonyFormPersonal from './sampleApp/tony/TonyFormPersonal';
+import TonyFormPersonal from "./sampleApp/tony/TonyFormPersonal";
+import TodoApp from "./sampleApp/phusnyd/TodoList/TodoApp";
 
 function App() {
- 
   // JSX
   return (
     <>
@@ -62,6 +62,8 @@ function App() {
 
       <br />
       <br />
+
+      <TodoApp />
       <br />
       <br />
       <br />
