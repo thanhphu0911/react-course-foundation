@@ -8,19 +8,22 @@ function DuyGenerateBoxApp() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const boxesArray = Array.from({length: boxes}, (_, i) => i + 1);
+    const boxesArray = Array.from({ length: boxes }, (_, i) => i + 1);
+    console.log("Number of box: ", boxes);
+    console.log(boxesArray);
     setDisplayBoxes(boxesArray);
+    console.log(displayBoxes);
     setBoxes(0);
   }
 
   return (
     <div>
       <GenerateInput
-        boxes={boxes} 
-        handleSubmit={handleSubmit}
+        boxes={boxes}
+        onHandleSubmit={handleSubmit}
         setBoxes={setBoxes}
       />
-      <BoxList displayBoxes={displayBoxes}/>
+      <BoxList displayBoxes={displayBoxes} />
     </div>
   );
 }

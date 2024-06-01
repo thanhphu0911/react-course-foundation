@@ -1,13 +1,14 @@
-function GenerateInput({boxes, setBoxes, handleSubmit}) {
+/* eslint-disable react/prop-types */
+function GenerateInput({ boxes, setBoxes, onHandleSubmit }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={onHandleSubmit}>
       <h2>Number of boxes:</h2>
-      <input 
-        type="number" 
+      <input
+        type="number"
         value={boxes}
         onChange={(e) => setBoxes(Number(e.target.value))}
       />
-      <button onClick={handleSubmit}>Generate</button>
+      <button>Generate</button>
     </form>
   );
 }
