@@ -21,6 +21,7 @@ import HandleApp from "./sampleApp/nhat/HandleApp";
 import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
 import StateHook from "./StateHook";
 import EffectHook from "./EffectHook";
+import DuyGenerateBoxApp from "./sampleApp/duy/DuyGenerateBox/BoxGenerateApp";
 
 function App() {
   // JSX
@@ -31,7 +32,7 @@ function App() {
       <Props />
       <br />
       <SampleAppHeader devName="nhat" />
-      
+
       <br />
       <br />
       <br />
@@ -58,15 +59,17 @@ function App() {
       <br />
       <NhatComposedComponent />
       <br />
-      <HandleGenerateBox/>
+      <HandleGenerateBox />
       <br />
 
       <StateHook />
 
       <br />
       <EffectHook />
-      
+
       <br />
+
+      <DuyGenerateBoxApp />
       <br />
     </>
   );
