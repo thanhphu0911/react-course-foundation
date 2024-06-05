@@ -21,6 +21,7 @@ import HandleApp from "./sampleApp/nhat/HandleApp";
 import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
 import StateHook from "./StateHook";
 import EffectHook from "./EffectHook";
+import PhuEffectHook from './PhuEffectHook';
 
 function App() {
   // JSX
@@ -64,8 +65,11 @@ function App() {
       <StateHook />
 
       <br />
-      <EffectHook />
+      {/* <EffectHook /> */}
       
+      <br />
+      <PhuEffectHook />      
+
       <br />
       <br />
     </>
