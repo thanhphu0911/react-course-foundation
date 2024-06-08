@@ -1,8 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function TonyFormPersonal() {
+function DuyPersonalForm() {
   const [users, setUsers] = React.useState([]);
+  const [page, setPage] = React.useState(1);
   const {
     register,
     handleSubmit,
@@ -26,32 +27,78 @@ function TonyFormPersonal() {
   }
   console.log("users: ", errors);
 
+  React.useEffect(() => {
+    async function fetchUser() {
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/users?_limit=5&_page=${page}`
+      );
+      const data = await res.json();
+      let arr = [];
+      data.forEach((item) => {
+        const {
+          id,
+          name,
+          email,
+          address: { street: street },
+          address: { city: city },
+        } = item;
+        const user = {
+          id,
+          first_name: name,
+          email,
+          address: street,
+          city: city,
+        };
+        arr.push(user);
+      });
+      setUsers(arr);
+    }
+    fetchUser();
+  }, [page]);
+
+  function handleNextPage() {
+    setPage((prevState) => prevState + 1);
+  }
+
+  function handlePrevPage() {
+    setPage((prevState) => prevState - 1);
+  }
+
   return (
     <div>
       <h1 className="text-3xl font-bold underline">
-        Sample App: TonyFormPersonal
+        Sample App: DuyPersonalForm
       </h1>
 
       <div className="mt-10 sm:mt-0">
-        <div className="md:grid md:grid-cols-3 md:gap-6">
-          <div className="mt-5 md:mt-0 md:col-span-2">
+        <div className="md:grid md:grid-cols-5 md:gap-6">
+          <div className="mt-5 md:mt-0 md:col-span-3 md:col-start-2 md:col-end-5">
             <form
-              onSubmit={handleSubmit((data) => {
+              onSubmit={(data) => {
                 // alert(JSON.stringify(data));
                 console.log("data: ", data);
-                const { first_name, last_name, email, country } = data;
+                const {
+                  first_name,
+                  last_name,
+                  email,
+                  address,
+                  city,
+                  district,
+                } = data;
                 const user = {
                   id: Date.now(),
                   first_name,
                   last_name,
-                  email, // shorthand
-                  country: country,
+                  email,
+                  address, // shorthand
+                  city: city,
+                  district,
                 };
                 // setUsers(prevState => {
                 //   return [...prevState, user]
                 // })
                 setUsers((prevState) => [...prevState, user]);
-              })}
+              }}
             >
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
@@ -67,14 +114,16 @@ function TonyFormPersonal() {
                         type="text"
                         name="first_name"
                         id="first_name"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
                         {...register("first_name", {
                           required: true,
                           minLength: 6,
                         })}
                       />
                       {errors?.first_name && (
-                        <span>This field is required</span>
+                        <span className="pt-2 text-red-600 text-sm">
+                          *This field is required
+                        </span>
                       )}
                     </div>
 
@@ -89,12 +138,12 @@ function TonyFormPersonal() {
                         type="text"
                         name="last_name"
                         id="last_name"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
                         {...register("last_name")}
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-4">
+                    <div className="col-span-6">
                       <label
                         htmlFor="email_address"
                         className="block text-sm font-medium text-gray-700"
@@ -105,40 +154,86 @@ function TonyFormPersonal() {
                         type="text"
                         name="email_address"
                         id="email_address"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
                         {...register("email", {
                           required: true,
                           minLength: {
                             value: 6,
-                            message: "Text should be lenght > 6",
+                            message: "*Text should be lenght > 6",
                           },
                           pattern: {
                             value:
                               /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                            message: `Email isn't correct format`,
+                            message: `*Email isn't correct format`,
                           },
                         })}
                       />
-                      {errors?.minLength?.message}
-                      {errors?.email?.message}
+                      <span className="pt-2 text-red-600 text-sm">
+                        {errors?.minLength?.message}
+                        {errors?.email?.message}
+                      </span>
                     </div>
-
-                    <div className="col-span-6 sm:col-span-3">
+                    <div className="col-span-6">
                       <label
-                        htmlFor="country"
+                        htmlFor="address"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Country / Region
+                        Address
+                      </label>
+                      <input
+                        type="text"
+                        name="address"
+                        id="address"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2"
+                        {...register("address", {
+                          required: true,
+                          minLength: {
+                            value: 6,
+                            message: "*Text should be lenght > 6",
+                          },
+                        })}
+                      />
+                      {errors?.address && (
+                        <span className="pt-2 text-red-600 text-sm">
+                          *Address is required
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="col-span-6 sm:col-span-4">
+                      <label
+                        htmlFor="city"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        City
                       </label>
                       <select
-                        id="country"
-                        name="country"
+                        id="city"
+                        name="city"
                         className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        {...register("country")}
+                        {...register("city")}
                       >
-                        <option value="US">United States</option>
-                        <option value="CAN">Canada</option>
-                        <option value="MEX">Mexico</option>
+                        <option value="HN">Ha Noi</option>
+                        <option value="DN">Da Nang</option>
+                        <option value="HCM">Ho Chi Minh</option>
+                      </select>
+                    </div>
+                    <div className="col-span-6 sm:col-span-2">
+                      <label
+                        htmlFor="district"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        District
+                      </label>
+                      <select
+                        id="district"
+                        name="district"
+                        className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        {...register("district")}
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                       </select>
                     </div>
                   </div>
@@ -157,7 +252,7 @@ function TonyFormPersonal() {
         </div>
       </div>
       <br />
-      <div className="relative overflow-x-auto">
+      <div className="relative overflow-x-auto mx-10">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -174,7 +269,13 @@ function TonyFormPersonal() {
                 Email
               </th>
               <th scope="col" className="px-6 py-3">
-                Country
+                Address
+              </th>
+              <th scope="col" className="px-6 py-3">
+                City
+              </th>
+              <th scope="col" className="px-6 py-3">
+                District
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -203,7 +304,10 @@ function TonyFormPersonal() {
                     </th>
                     <td className="px-6 py-4">{user.last_name}</td>
                     <td className="px-6 py-4">{user.email}</td>
-                    <td className="px-6 py-4">{user.country}</td>
+                    <td className="px-6 py-4">{user.address}</td>
+                    <td className="px-6 py-4">{user.city}</td>
+                    <td className="px-6 py-4">{user.district}</td>
+
                     <td className="px-6 py-4">
                       <button
                         type="button"
@@ -220,7 +324,7 @@ function TonyFormPersonal() {
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                 <th
                   scope="row"
-                  colSpan={4}
+                  colSpan={8}
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center"
                 >
                   No data
@@ -230,8 +334,23 @@ function TonyFormPersonal() {
           </tbody>
         </table>
       </div>
+      <div className="mt-4 flex justify-center items-center">
+        <button
+          onClick={handlePrevPage}
+          className=" justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Prev
+        </button>
+        <span className="px-4">Page {page}</span>
+        <button
+          onClick={handleNextPage}
+          className=" justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }
 
-export default TonyFormPersonal;
+export default DuyPersonalForm;

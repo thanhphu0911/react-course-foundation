@@ -22,12 +22,13 @@ import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
 import StateHook from "./StateHook";
 import EffectHook from "./EffectHook";
 import DuyGenerateBoxApp from "./sampleApp/duy/DuyGenerateBox/BoxGenerateApp";
+import DuyPersonalForm from "./sampleApp/duy/DuyPersonalForm/DuyPersonalForm";
 
 function App() {
   // JSX
   return (
     <>
-      <ReactJSX />
+      {/* <ReactJSX />
       <br />
       <Props />
       <br />
@@ -70,7 +71,9 @@ function App() {
       <br />
 
       <DuyGenerateBoxApp />
-      <br />
+      <br /> */}
+
+      <DuyPersonalForm />
     </>
   );
 }
