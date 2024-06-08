@@ -79,6 +79,13 @@ function EffectHook() {
     fetchTodo();
   }, [page, limit])
 
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect no dependency -->:', count) 
+    return () => {
+      console.log('clean up useLayoutEffect no dependency -->: ', count) 
+    }
+  })
+
   function handleNextPage() {
     setPage(prevState => prevState + 1)
   }

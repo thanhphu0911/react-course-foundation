@@ -22,6 +22,9 @@ import HandleGenerateBox from "./sampleApp/nhat/HandleGenerateBox";
 import StateHook from "./StateHook";
 import EffectHook from "./EffectHook";
 import PhuEffectHook from './PhuEffectHook';
+import CriticalRendering from "./CriticalRendering";
+import BookStore from "./BookStore";
+import { BookProvider } from "./context/BookContext";
 
 function App() {
   // JSX
@@ -65,10 +68,18 @@ function App() {
       <StateHook />
 
       <br />
-      {/* <EffectHook /> */}
+      <EffectHook />
       
       <br />
-      <PhuEffectHook />      
+      {/* <PhuEffectHook />       */}
+
+      <br />
+      <CriticalRendering />
+
+      <br />
+      <BookProvider>
+        <BookStore />
+      </BookProvider>
 
       <br />
       <br />
