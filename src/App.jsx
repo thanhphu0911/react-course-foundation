@@ -25,6 +25,10 @@ import PhuEffectHook from './PhuEffectHook';
 import CriticalRendering from "./CriticalRendering";
 import BookStore from "./BookStore";
 import { BookProvider } from "./context/BookContext";
+import TonyColorBox from "./challenge/TonyColorBox";
+import TonyQuestionBoard from "./challenge/ TonyQuestionBoard";
+
+
 
 function App() {
   // JSX
@@ -80,6 +84,12 @@ function App() {
       <BookProvider>
         <BookStore />
       </BookProvider>
+
+      <br />
+      <TonyColorBox />
+
+      <br />
+      <TonyQuestionBoard />
 
       <br />
       <br />

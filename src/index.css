@@ -140,3 +140,83 @@ body {
   width: 100%;
   height: 300px;
 }
+
+.tonyBoxColor {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tonyBoxColor div {
+  height: 50px;
+  width: 45%;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.tonyBoxColor .red {
+  background-color: red
+}
+
+.tonyBoxColor .yellow {
+  background-color: #ff0
+}
+
+.tonyBoxColor .aqua {
+  background-color: #0ff
+}
+
+.tonyBoxColor .purple {
+  background-color: purple
+}
+
+.question_board {
+  display: flex;
+  justify-content: space-between
+}
+
+.question_board .column {
+  margin: 0 15px 50px;
+  width: 33%
+}
+
+.question_board .boards {
+  display: grid;
+  row-gap: 16px;
+  margin-top: 20px;
+}
+
+.question_board .question {
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.question__status {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin-right: 5px
+}
+
+.question__status--CORRECT {
+  background-color: green
+}
+
+.question__status--INCORRECT {
+  background-color: red
+}
+
+.question__status--PARTIALLY_CORRECT {
+  background-color: #000
+}
+
+.question__status--none {
+  background-color: #dcdcdc
+}
