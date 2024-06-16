@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+}
+
+.hero-banner {
+  background-color: #16bd27;
+  width: 100%;
+  height: 300px;
+}
+
+.categories {
+  background-color: #17134f;
+  width: 100%;
+  height: 300px;
+}
