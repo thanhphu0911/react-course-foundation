@@ -23,6 +23,7 @@ import StateHook from "./StateHook";
 import EffectHook from "./EffectHook";
 import DuyGenerateBoxApp from "./sampleApp/duy/DuyGenerateBox/BoxGenerateApp";
 import DuyPersonalForm from "./sampleApp/duy/DuyPersonalForm/DuyPersonalForm";
+import DuyRefHook from "./sampleApp/duy/DuyRefHook";
 
 function App() {
   // JSX
@@ -73,7 +74,8 @@ function App() {
       <DuyGenerateBoxApp />
       <br /> */}
 
-      <DuyPersonalForm />
+      {/* <DuyPersonalForm /> */}
+      <DuyRefHook />
     </>
   );
 }
