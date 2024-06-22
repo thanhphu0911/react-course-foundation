@@ -28,7 +28,7 @@ import { BookProvider } from "./context/BookContext";
 import TonyColorBox from "./challenge/TonyColorBox";
 import TonyQuestionBoard from "./challenge/ TonyQuestionBoard";
 import RefHook from './RefHook';
-
+import PerformanceHook from './PerformanceHook';
 
 function App() {
   // JSX
@@ -93,6 +93,9 @@ function App() {
 
       <br />
       <RefHook />
+      <br />
+
+      <PerformanceHook />
 
       <br />
       <br />
