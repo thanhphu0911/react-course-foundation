@@ -4,4 +4,10 @@ import "./index.css";
 import "./sampleApp/phusnyd/css/style.css";
 import "./sampleApp/duy/style.css";
 import "./sampleApp/nhat/style.css";
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import BasicButton from "./components/BasicButton";
 
 /*
@@ -28,6 +29,7 @@ function LogoutButton() {
 }
 
 function ConditionalRendering() {
+  const navigate = useNavigate();
   const [users, setUsers] = React.useState(null);
   let button = <LoginButton />;
 
@@ -50,6 +52,7 @@ function ConditionalRendering() {
 
       <h4> && </h4>
       <BasicButton text="Test User" onClick={testUser} />
+      <BasicButton text="Go to user" onClick={() => navigate('/user')} />
       <br />
       {Array.isArray(users) &&
         users.map((user) => {
