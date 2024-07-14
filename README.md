@@ -78,3 +78,30 @@ $ git commit -m "..."
 $ git push
 
 ```
+
+
+# React Router DOM
+
+- useNavigate -> redirect to new page
+- Link -> component to user click redirect page (<a\>)
+- useLocation
+- useParams -> return param in url.
+    - eg: xxx/user/profile/1 -> get 1
+- useSearchParams -> get informations in url (querystring)
+    - eg: xx/user/profiles?_page=1&_limit=1  (_page=1&_limit=1)
+
+# Authenticate & authorize
+- authenticate: xác thực -> check user login into admin page, profile page ... (system)
+    - public page: product list, detail, contact, home ...
+    - private page: checkout, profile, change password ...
+
+- authorize: phân quyền -> admin, member, operator, manager
+    - phân quyền (permission) -> xem user có quyền hạn gì trong hệ thống:
+        - action: CRUD -> create, read, update, delete ...
+        - page: admin page, product detail, checkout page ....
+        - API
+            - public API
+                - get usd: GET vietcombank.com/api/usd
+                - get gold:  GET vietcombank.com/api/gold
+            - private API:
+                - get transaction: GET vietcombank.com/api/transaction (token = ADMIN, OPERATOR)

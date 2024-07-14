@@ -34,6 +34,9 @@ import User from "./User/User";
 import UserProfile from "./User/UserProfile";
 import UserAccount from "./User/UserAccount";
 import UserDetail from "./User/UserDetail";
+import Login from "./Login";
+import AuthRoute from "./routes/AuthRoute";
+import GuestRoute from "./routes/GuestRoute";
 
 function App() {
   // JSX
@@ -101,11 +104,12 @@ function App() {
             <Route path="/" element={<ReactJSX />} />
             <Route path="/condition-rendering" element={<ConditionalRendering />} />
             <Route path="/list-keys" element={<ListKey />} />
+            <Route path="/login" element={<GuestRoute><Login /></GuestRoute>} />
             {/* <Route path="/user" element={<User />} />
             <Route path="/user/account" element={<UserAccount />} />
             <Route path="/user/profile" element={<UserProfile />} /> */}
 
-            <Route path="/user" element={<User />}>
+            <Route path="/user" element={<AuthRoute><User /></AuthRoute>}>
               <Route path="account" element={<UserAccount />} />
               <Route path="profile" element={<UserProfile />} />
               <Route path="profile/:userId" element={<UserDetail />} />
