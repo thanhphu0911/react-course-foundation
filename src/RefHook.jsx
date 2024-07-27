@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 /*
 - access node DOM in jsx
@@ -72,6 +73,10 @@ function RefHook() {
   const firstNameRef = React.useRef(null);
   const countRef = React.useRef(10);
   const modalRef = React.useRef(null);
+  const isLoading = useSelector(state => state.app.isLoading);
+
+  console.log("state redux ------------: ",{isLoading})
+
 
 
   function onFocus() {
@@ -101,12 +106,14 @@ function RefHook() {
       <h1>RefHook</h1>
       Variables X: {countRef.current} <br />
 
-      First Name: <input type="text" ref={firstNameRef}  className='border' />
+      First Name: <input type="text" ref={firstNameRef}  className='border' /> <br />
+ 
+      <button type="button" onClick={onFocus}>Focus</button> <br />
+      <button type="button" onClick={_handleOpenModal}>Open Modal</button> <br />
 
-      <button type="button" onClick={onFocus}>Focus</button>
-      <button type="button" onClick={_handleOpenModal}>Open Modal</button>
+      <FancyModal ref={modalRef}  /> <br />
 
-      <FancyModal ref={modalRef}  />
+      <div>Get state from store redux</div> <br />
     </div>
   )
 }
