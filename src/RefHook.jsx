@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react'
 import { useSelector } from 'react-redux';
-
+import { useSmallScreen } from './hooks/useSmallScreen'
 /*
 - access node DOM in jsx
 - don't cause re-render when update ref
@@ -69,15 +69,12 @@ const FancyModal = React.forwardRef((props, ref) => {
 })
 
 function RefHook() {
+  const { isSmalScreen, multiple, multipleTotal } = useSmallScreen();
   const [timestamp, setTimestamp] = React.useState(Date.now());
   const firstNameRef = React.useRef(null);
   const countRef = React.useRef(10);
   const modalRef = React.useRef(null);
-  const isLoading = useSelector(state => state.app.isLoading);
-
-  console.log("state redux ------------: ",{isLoading})
-
-
+  const count = useSelector(state => state.app.count);
 
   function onFocus() {
     console.log('onFocus: ', firstNameRef)
@@ -99,7 +96,7 @@ function RefHook() {
   }
 
 
-  console.log('Ref hook re-render')
+  console.log('Ref hook re-render', multiple)
 
   return (
     <div>
@@ -113,7 +110,13 @@ function RefHook() {
 
       <FancyModal ref={modalRef}  /> <br />
 
-      <div>Get state from store redux</div> <br />
+      <div>Get state from store redux: {count}</div> <br />
+      <br />
+      Demo Custom hooks - small screen: {isSmalScreen ? ' yes' : 'no'}
+      <br />
+      <button type="button" onClick={multipleTotal}>Multiple custom hooks</button> <br />
+
+   
     </div>
   )
 }

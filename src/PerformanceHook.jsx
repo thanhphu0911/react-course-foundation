@@ -1,9 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import About from './components/performance-hook/About'
 import Product from './components/performance-hook/Product'
 import Todos from './components/performance-hook/Todos'
 
+import { incrementCount } from './states/actions/app.action';
+import { useSmallScreen } from './hooks/useSmallScreen'
+
 function PerformanceHook() {
+  const { isSmalScreen, multiple } = useSmallScreen();
+  const dispatch = useDispatch();
   const [count, setCount] = React.useState(1);
   const [movie ,setMovie] = React.useState({
     title: 'tony',
@@ -15,6 +21,7 @@ function PerformanceHook() {
   const increment = React.useCallback(() => {
     console.log('useCallback: ', count)
     setCount(count + 1)
+    dispatch(incrementCount(10))
   }, [count]) // memory A
 
   function updateMovie() {
@@ -24,7 +31,7 @@ function PerformanceHook() {
     }))
   }
 
-  console.log('Performance hooks render: ---')
+  console.log('Performance hooks render: ---', multiple)
 
   return (
     <div>
@@ -45,6 +52,9 @@ function PerformanceHook() {
       <Todos 
         increment={increment}
       />
+
+      <br />
+      Demo Custom hooks - small screen: {isSmalScreen ? ' yes' : 'no'}
     </div>
   )
 }

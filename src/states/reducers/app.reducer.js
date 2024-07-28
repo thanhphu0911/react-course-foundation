@@ -2,7 +2,8 @@ const initializeState = {
   theme: 'light',
   user: null,
   isLoading: false,
-  access_token: null
+  access_token: null,
+  count: 0
 }
 
 export const appReducer = (state = initializeState, action) => {
@@ -11,6 +12,18 @@ export const appReducer = (state = initializeState, action) => {
       return {
         ...state,
         theme: action.payload
+      }
+    }
+    case 'INCEREMENT': {
+      return {
+        ...state,
+        count: state.count +  action.payload.count
+      }
+    }
+    case 'SET_LOADING': {
+      return {
+        ...state,
+        isLoading: action.payload.isLoading
       }
     }
     case 'SHOW_LOADING': {
@@ -28,7 +41,7 @@ export const appReducer = (state = initializeState, action) => {
     case 'SET_USER': {
       return {
         ...state,
-        user: action.payload
+        user: action.payload.user
       }
     }
     default:
