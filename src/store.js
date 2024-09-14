@@ -16,7 +16,7 @@ state = {
   app:  {
     theme: 'light',
     user: null,
-    isLoading: false,
+    isLoading: /false,
     access_token
   },
   carts: {
